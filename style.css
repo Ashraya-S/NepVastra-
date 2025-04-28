@@ -1,0 +1,327 @@
+/* General styling */
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Segoe UI Emoji', 'Arial', sans-serif;
+}
+
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+
+/* top Normal desktop styling */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+/* Mobile: For small screens */
+@media (max-width: 768px) {
+  nav ul {
+    display: grid; /* change flex to grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px;
+    padding: 10px;
+    justify-items: center; /* center each item */
+  }
+
+  nav ul li {
+    margin: 0; /* Remove margin between li */
+  }
+
+  nav ul li a {
+    font-size: 16px; /* Slightly smaller font if needed */
+  }
+}
+
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    margin: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+/* Product styling */
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.product div {
+    max-width: 250px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.product h3 {
+    font-size: 22px;
+    color: #2C3E50;
+    margin: 10px 0;
+}
+
+.product p {
+    color: #E74C3C;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.product button:hover {
+    background-color: #C0392B;
+}
+
+/* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Any image */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Team Section Styling */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.team-member p {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+.team-member p a {
+    font-size: 12px;
+    color: #3498db;
+}
+
+/* FAQ and Contact Us section properly aligned */
+.faq-contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* FAQ, Contact Us, and Our Team boxes */
+.faq-contact-container > div {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 270px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Blue clickable boxes (buttons) inside the FAQ, Contact Us, and Our Team boxes */
+.faq-contact-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 0;
+    width: 180px;
+    height: 60px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover effect for buttons */
+.faq-contact-container button:hover {
+    background-color: #2980b9;
+}
+
+/* Title and text inside each box */
+.faq-contact-container h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.faq-contact-container p {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+/* Hide the answer content by default */
+.faq-section .section-content {
+    display: none;
+}
+
+/* Show the answer when the checkbox is checked */
+.faq-section input[type="checkbox"]:checked + .toggle-label + .section-content {
+    display: block;
+}
+
+/* Responsive Media Query for Larger Screens (992px and up) */
+@media (min-width: 992px) {
+  .faq-contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .faq-contact-container > div {
+    flex: 0 1 300px;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .team {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .team-member {
+    flex: 0 1 300px;
+    max-width: 300px;
+  }
+
+  /* Proper size adjustments for large screens */
+  .team-member h4 {
+    font-size: 24px;
+  }
+}

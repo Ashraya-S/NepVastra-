@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection - Nepvastra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Women's Collection - Nepvastra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li id="user-info"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Women's Collection</h2>
+        <div class="product">
+            <div>
+                <img src="image/women-newari-dress.png" alt="Women's Cultural Dress 1">
+                <h3>Newari Pahiran</h3>
+                <p>Price: $120</p>
+                <button onclick="addToCart('Newari dress', 120)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="image/women-tamang-dress.png" alt="Women's Cultural Dress 2">
+                <h3>Tamang Poshak</h3>
+                <p>Price: $100</p>
+                <button onclick="addToCart('Tamang dress', 100)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="image/women-rai-dress.png" alt="Women's Cultural Dress 3">
+                <h3>Rai Pahiran</h3>
+                <p>Price: $110</p>
+                <button onclick="addToCart('Rai dress', 110)">Add to Cart</button>
+            </div>
+            <div>
+            <img src="image/gunyo-choli.png" alt="Women's Cultural Dress 4">
+               <h3>Gunyo Choli</h3>
+               <p>Price: $150</p>
+              <button onclick="addToCart('Gunyo Choli', 150)">Add to Cart</button>
+            </div>
+
+                <div>
+                 <img src="image/sari.png" alt="Women's Cultural Dress 5">
+                <h3>Sari</h3>
+                <p>Price: $200</p>
+             <button onclick="addToCart('Sari', 200)">Add to Cart</button>
+            </div>
+
+                <div>
+                <img src="image/dhaka.png" alt="Women's Cultural Dress 6">
+                <h3>Dhaka</h3>
+                 <p>Price: $90</p>
+                <button onclick="addToCart('Dhaka', 90)">Add to Cart</button>
+                </div>
+
+            <div>
+                 <img src="image/kirat-rai.png" alt="Women's Cultural Dress 7">
+                <h3>Kirat Rai</h3>
+                <p>Price: $240</p>
+                 <button onclick="addToCart('Kirat Rai Dress', 240)">Add to Cart</button>
+            </div>
+            <div>
+                 <img src="image/kurtha-set.png" alt="Women's Cultural Dress 8">
+                <h3>Kurtha Set</h3>
+                <p>Price: $180</p>
+                 <button onclick="addToCart('Kurtha Set', 180)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nepvastra. All Rights Reserved. KOI</p>
+    </footer>
+
+<script>
+    // Function to add product to cart
+    function addToCart(product, price) {
+        // Get existing cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Add selected product to the cart array
+        cart.push({ product: product, price: price });
+        
+        // Store updated cart back in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Optionally, show a confirmation message
+        alert(`${product} added to cart!`);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let user = localStorage.getItem("loggedInUser");
+        let userInfo = document.getElementById("user-info");
+
+        if (user) {
+            userInfo.innerHTML = `Logged in as ${user} | <a href="#" id="logout">Logout</a>`;
+            document.getElementById("logout").addEventListener("click", function() {
+                localStorage.removeItem("loggedInUser"); // Remove user from storage
+                window.location.reload(); // Refresh page to update UI
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

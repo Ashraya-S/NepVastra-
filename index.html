@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepvastra - Nepali Cultural Dress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nepvastra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                 <li><a href="about.html">About us</a></li>
+                 <li id="user-info"></li> <!-- This will display the logged-in user -->
+             
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h2>Welcome to Nepvastra🇳🇵</h2>
+    <p>Nepali traditional clothing represents the rich cultural diversity of Nepal. For centuries, Nepali attire has been woven with history, symbolizing the identity and values of its people. These clothes are worn during festivals, ceremonies, and weddings, and showcase unique styles like the Dhaka, Gunyo Cholo, and Daura Suruwal.
+At Nepvastra, we not only sell clothes but also promote and protect Nepali traditional clothing and culture, ensuring that our rich heritage is celebrated for generations to come.</p>
+</main>
+    <main>
+    <h3>Feature</h3>
+
+     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
+    <img src="image/f3.png" alt="college logo" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+  <iframe src="https://www.youtube.com/embed/Z2qSBFPyCo4" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+  </iframe>
+</div>
+ <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 20px;">
+    <img src="image/f2.png" alt="college logo" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+</div>
+
+
+ </main>
+
+    <footer>
+        <p>&copy; 2025 Nepvastra. All Rights Reserved. KOI <img src="image/koi.png" alt="college logo" style="width: 40px; height: 20px;"></p>
+    </footer>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let user = localStorage.getItem("loggedInUser");
+        let userInfo = document.getElementById("user-info");
+
+        if (user) {
+            userInfo.innerHTML = `Logged in as ${user} | <a href="#" id="logout">Logout</a>`;
+            document.getElementById("logout").addEventListener("click", function() {
+                localStorage.removeItem("loggedInUser"); // Remove user from storage
+                window.location.reload(); // Refresh page to update UI
+            });
+        }
+    });
+</script>
+</body>

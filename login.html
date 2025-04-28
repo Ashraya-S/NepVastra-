@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Nepvastra</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            if (username.trim() !== "") {
+                localStorage.setItem("loggedInUser", username);
+                updateUserStatus();
+            }
+        }
+
+        function updateUserStatus() {
+            let user = localStorage.getItem("loggedInUser");
+            if (user) {
+                document.getElementById("user-info").innerHTML = `Logged in as ${user}`;
+            }
+        }
+
+        window.onload = updateUserStatus;
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Nepvastra - Login</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+        <p id="user-info"></p> <!-- User Status Here -->
+    </header>
+
+    <main>
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="loginUser(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+    </main>
+</body>
+    <footer>
+        <p>&copy; 2025 Nepvastra. All Rights Reserved. KOI</p>
+    </footer>
+
+</html>
