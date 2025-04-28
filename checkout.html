@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Nepvastra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Checkout - Nepvastra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li id="user-info"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be shown here -->
+        </div>
+        <p>Total: $<span id="total-price">0</span></p>
+
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required><br><br>
+            <label for="payment">Payment Method:</label>
+            <select id="payment" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash-on-delivery">Cash on Delivery</option>
+            </select><br><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nepvastra. All Rights Reserved. KOI</p>
+    </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let user = localStorage.getItem("loggedInUser");
+        let userInfo = document.getElementById("user-info");
+
+        if (user) {
+            userInfo.innerHTML = `Logged in as ${user} | <a href="#" id="logout">Logout</a>`;
+            document.getElementById("logout").addEventListener("click", function() {
+                localStorage.removeItem("loggedInUser"); // Remove user from storage
+                window.location.reload(); // Refresh page to update UI
+            });
+        }
+
+        // Retrieve cart items from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItemsDiv = document.getElementById('cart-items');
+        let totalPrice = 0;
+
+        // Display cart items and add remove buttons
+        cart.forEach((item, index) => {
+            let div = document.createElement('div');
+            div.innerHTML = `
+                <p>${item.product} - $${item.price} 
+                <button class="remove-btn" data-index="${index}">Remove</button></p>
+            `;
+            cartItemsDiv.appendChild(div);
+            totalPrice += item.price;
+        });
+
+        // Display total price
+        document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+
+        // Handle removal of items from cart
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                let index = this.getAttribute('data-index');
+                cart.splice(index, 1); // Remove item from cart array
+
+                // Update cart in localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Refresh the cart display
+                window.location.reload(); // Reload the page to reflect changes
+            });
+        });
+
+        // Handle checkout form submission
+        document.getElementById("checkout-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('payment').value;
+
+            // Show confirmation message (in a real app, you'd handle payment here)
+            alert(`Order placed successfully!\nName: ${name}\nAddress: ${address}\nPayment Method: ${paymentMethod}`);
+            
+            // Optionally, clear cart after successful checkout
+            localStorage.removeItem('cart');
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepvastra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header>
+        <h1>Nepvastra🇳🇵</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li id="user-info"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="content">
+            <h2>About Us</h2>
+            <p><strong>Nepvastra</strong> is a leading online retailer specializing in Nepali cultural and traditional dresses. We aim to bring the finest craftsmanship of Nepali apparel to the world, showcasing the rich cultural heritage of Nepal.🏔️</p>
+        </div>
+
+        <!-- FAQ / Contact Us / Our Team Section -->
+        <div class="faq-contact-container" style="display: flex; gap: 20px; margin-bottom: 20px;">
+            <!-- FAQ Button -->
+            <div class="faq-container">
+                <button class="toggle-faq" onclick="toggleFAQ()" style="background-color: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 18px;">
+                    FAQ
+                </button>
+            </div>
+
+            <!-- Contact Us Button -->
+            <div class="contact-us-container">
+                <button onclick="openChat()" style="background-color: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 18px;">
+                    Contact Us
+                </button>
+            </div>
+
+            <!-- Our Team Button -->
+            <div class="our-team-container">
+                <button onclick="toggleTeam()" style="background-color: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 18px;">
+                    Our Team
+                </button>
+            </div>
+        </div>
+
+        <!-- FAQ Content (Initially Hidden) -->
+<div id="faq-section" style="margin-top: 20px; display: none;">
+    <div class="faq-item" style="margin-bottom: 10px;">
+        <input type="checkbox" id="faq1-toggle" class="section-toggle">
+        <label for="faq1-toggle" class="toggle-label">What types of products do you sell?</label>
+        <div class="section-content" style="display: none;">
+            <p>We specialize in traditional and modern Nepali clothing, including dresses, kurtas, daura suruwal, and accessories.</p>
+        </div>
+    </div>
+    <div class="faq-item" style="margin-bottom: 10px;">
+        <input type="checkbox" id="faq2-toggle" class="section-toggle">
+        <label for="faq2-toggle" class="toggle-label">Do you ship internationally?</label>
+        <div class="section-content" style="display: none;">
+            <p>Yes, we ship worldwide. Shipping charges may vary depending on the destination country.</p>
+        </div>
+    </div>
+    <div class="faq-item" style="margin-bottom: 10px;">
+        <input type="checkbox" id="faq3-toggle" class="section-toggle">
+        <label for="faq3-toggle" class="toggle-label">How can I track my order?</label>
+        <div class="section-content" style="display: none;">
+            <p>After your order is shipped, you will receive a tracking number by email which you can use to track your package online.</p>
+        </div>
+    </div>
+</div>
+
+ <script>
+    const faqToggles = document.querySelectorAll('input[type="checkbox"].section-toggle');
+
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            // Find the next sibling which is the label, then next sibling which is the div.section-content
+            const content = this.nextElementSibling.nextElementSibling;
+
+            if (this.checked) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+
+
+</div>
+
+        <!-- Our Team Content (Initially Hidden) -->
+        <div id="team-section" style="display: none; margin-top: 20px;">
+            <div class="team">
+                <div class="team-row" style="display: flex; gap: 30px; margin-bottom: 30px;">
+                    <div class="team-member" style="text-align: center;">
+                        <img src="image/ash.png" alt="Ashraya Shrestha" class="team-photo" style="width: 150px; height: 150px; border-radius: 50%;">
+                        <h4>Ashraya Shrestha</h4>
+                        <p>Founder & CEO</p>
+                        <p>Email: <a href="mailto:20028045@students.koi.edu.au">20028045@students.koi.edu.au</a></p>
+                    </div>
+                    <div class="team-member" style="text-align: center;">
+                        <img src="image/subani.png" alt="Subani Kc" class="team-photo" style="width: 150px; height: 150px; border-radius: 50%;">
+                        <h4>Subani Kc</h4>
+                        <p>Operational Manager</p>
+                        <p>Email: <a href="mailto:20027343@students.koi.edu.au">20027343@students.koi.edu.au</a></p>
+                    </div>
+                </div>
+
+                <div class="team-row" style="display: flex; gap: 30px;">
+                    <div class="team-member" style="text-align: center;">
+                        <img src="image/liza.png" alt="Liza Shrestha" class="team-photo" style="width: 150px; height: 150px; border-radius: 50%;">
+                        <h4>Liza Shrestha</h4>
+                        <p>Lead Designer</p>
+                        <p>Email: <a href="mailto:20027705@students.koi.edu.au">20027705@students.koi.edu.au</a></p>
+                    </div>
+                    <div class="team-member" style="text-align: center;">
+                        <img src="image/aakriti.png" alt="Aakriti Bhandari" class="team-photo" style="width: 150px; height: 150px; border-radius: 50%;">
+                        <h4>Aakriti Bhandari</h4>
+                        <p>Marketing Head</p>
+                        <p>Email: <a href="mailto:20027780@students.koi.edu.au">20027780@students.koi.edu.au</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat Box (Initially Hidden) -->
+<div id="chat-box" style="display: none; position: fixed; bottom: 10px; right: 10px; width: 300px; background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <h3 style="margin-top: 0; text-align: center;">💬 Chat with us</h3>
+    <div id="chat-content" style="max-height: 200px; overflow-y: auto; margin-bottom: 10px; padding: 5px;">
+        <!-- Chat messages will appear here -->
+    </div>
+    <input type="text" id="chat-input" placeholder="Type your message..." style="width: calc(100% - 20px); padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+    <button onclick="sendMessage()" style="background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 100%;">
+        Send
+    </button>
+</div>
+
+<script>
+    // Toggle FAQ Section
+    function toggleFAQ() {
+        var faqSection = document.getElementById("faq-section");
+        faqSection.style.display = (faqSection.style.display === "none" || faqSection.style.display === "") ? "block" : "none";
+    }
+
+    // Open Chat Box for Contact Us
+    function openChat() {
+        var chatBox = document.getElementById("chat-box");
+        var chatContent = document.getElementById("chat-content");
+        if (chatBox.style.display === "none" || chatBox.style.display === "") {
+            chatBox.style.display = "block";
+            chatContent.innerHTML = ""; // Clear previous chat
+            // Add welcome message
+            var welcomeDiv = document.createElement("div");
+            welcomeDiv.style.marginBottom = "10px";
+            welcomeDiv.innerHTML = "👋 Hi there! How may I help you?<br>Please type your <b>name</b> and your <b>query</b> below.";
+            chatContent.appendChild(welcomeDiv);
+        } else {
+            chatBox.style.display = "none";
+        }
+    }
+
+    // Send a message in chat box
+    function sendMessage() {
+        var chatContent = document.getElementById("chat-content");
+        var chatInput = document.getElementById("chat-input");
+        var message = chatInput.value.trim();
+        if (message !== "") {
+            // User message
+            var userMessageDiv = document.createElement("div");
+            userMessageDiv.style.marginBottom = "5px";
+            userMessageDiv.style.textAlign = "right";
+            userMessageDiv.style.color = "#333";
+            userMessageDiv.textContent = "You: " + message;
+            chatContent.appendChild(userMessageDiv);
+
+            // Auto-reply
+            setTimeout(function() {
+                var replyDiv = document.createElement("div");
+                replyDiv.style.marginBottom = "10px";
+                replyDiv.style.textAlign = "left";
+                replyDiv.style.color = "#3498db";
+                replyDiv.textContent = "✅ Our customer support will contact you promptly.";
+                chatContent.appendChild(replyDiv);
+                chatContent.scrollTop = chatContent.scrollHeight; // Scroll to bottom
+            }, 500);
+
+            chatInput.value = ""; // Clear input
+            chatContent.scrollTop = chatContent.scrollHeight; // Scroll to bottom
+        }
+    }
+
+    // Toggle Our Team Section
+    function toggleTeam() {
+        var teamSection = document.getElementById("team-section");
+        teamSection.style.display = (teamSection.style.display === "none" || teamSection.style.display === "") ? "block" : "none";
+    }
+
+    
+  document.addEventListener("DOMContentLoaded", function() {
+        let user = localStorage.getItem("loggedInUser");
+        let userInfo = document.getElementById("user-info");
+
+        if (user) {
+            userInfo.innerHTML = `Logged in as ${user} | <a href="#" id="logout">Logout</a>`;
+            document.getElementById("logout").addEventListener("click", function() {
+                localStorage.removeItem("loggedInUser"); // Remove user from storage
+                window.location.reload(); // Refresh page to update UI
+            });
+        }
+    });
+    
+</script>
+
+ <main>
+   
+         <div class="image-container">
+    <p><img src="image/f5.png" alt="about pic" class="responsive-image"></p>
+   </div>
+
+    <div class="image-container">
+    <p><img src="image/f6.png" alt="about pic" class="responsive-image"></p>
+   </div>
+ </main>
+    <footer>
+        <p>&copy; 2025 Nepvastra. All Rights Reserved. KOI </p>
+    </footer>
+</body>
+</html>
